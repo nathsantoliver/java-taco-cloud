@@ -1,6 +1,6 @@
 package tacos.web;
 
-import javax.validation.Valid;
+//import javax.validation.Valid;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -45,6 +45,15 @@ public class DesignTacoController {
         model.addAttribute("design", new Taco());
 
         return "design";
+    }
+
+    @PostMapping
+    public String processDesign(Design design) {
+        // Save the taco design...
+        // We'll do this in chapter 3
+        log.info("Processing dedsign: " + design);
+
+        return "redirect:/orders/current";
     }
 
 }
